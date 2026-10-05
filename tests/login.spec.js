@@ -6,6 +6,7 @@ test('has title', async ({ page }) =>
     await page.locator("#txtUsername").fill("Admin");
     await page.locator("#txtPassword").fill("Qedge123!@#");
     //await page.getByRole("button",{name: "LOGIN"}).click(); 
-    await page.locator("#btnLogin").click();   
+    await page.locator("#btnLogin").click(); 
+    await expect(page.getByRole('link',{name: 'Admin'})).toBeVisible();  
 
 });
